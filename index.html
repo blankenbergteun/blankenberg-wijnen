@@ -511,6 +511,18 @@ select { border-radius: 2px; }
 .bro-pic:hover { transform: rotate(0deg) scale(1.04); }
 .bro-pic img { display: block; width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: center 30%; }
 .team2 { margin-top: 6px; transform: rotate(-2deg); }
+
+/* Foto's schuin over elkaar */
+.stack { position: relative; width: 100%; aspect-ratio: 1 / 1.42; }
+.stack .st { position: absolute; margin: 0; cursor: pointer; transition: transform .45s cubic-bezier(.3,1.3,.5,1), box-shadow .45s; }
+.stack .st1 { left: 0; top: 0; width: 80%; transform: rotate(-4deg); z-index: 1; }
+.stack .st2 { right: 0; top: 24%; width: 72%; transform: rotate(5deg); z-index: 1; }
+.stack .st.front { z-index: 2; box-shadow: 0 4px 8px rgba(0,0,0,.14), 0 22px 44px rgba(0,0,0,.26); }
+.stack .st1.front { transform: rotate(-2deg) scale(1.04); }
+.stack .st2.front { transform: rotate(3deg) scale(1.04); }
+.stack .st2 img { aspect-ratio: 458 / 560; object-fit: cover; }
+@media (max-width: 800px) { .stack { max-width: 380px; margin: 0 auto; } }
+@media (prefers-reduced-motion: reduce) { .stack .st { transition: none; } }
 </style>
 </head>
 <body>
@@ -1160,6 +1172,7 @@ function renderBoxes() {
 
 function renderAbout() {
   document.getElementById("heroSlot").innerHTML = "";
+  setTimeout(stackInit, 0);
   document.getElementById("view").innerHTML = `
     <nav class="crumbs" aria-label="Kruimelpad"><a href="#">Alle wijnen</a><span>›</span><span>Over ons</span></nav>
     <div class="about">
@@ -1190,11 +1203,26 @@ function renderAbout() {
         </ol>
       </div>
       <aside class="side">
-        <figure class="team"><img src="${PHOTO}" alt="Sjoerd en Teun Blankenberg in de wijngaard van Château Tour des Gendres" width="700" height="933"><figcaption>Château Tour des Gendres, Bergerac</figcaption></figure>
-        <figure class="team team2"><img src="${TEAM.both}" alt="Sjoerd (links) en Teun Blankenberg"><figcaption>Sjoerd en Teun</figcaption></figure>
+        <div class="stack" id="stack">
+          <figure class="team st st1 front" tabindex="0"><img src="${PHOTO}" alt="Sjoerd en Teun Blankenberg in de wijngaard van Château Tour des Gendres" width="700" height="933"><figcaption>Château Tour des Gendres, Bergerac</figcaption></figure>
+          <figure class="team st st2" tabindex="0"><img src="${TEAM.both}" alt="Sjoerd (links) en Teun Blankenberg"><figcaption>Sjoerd en Teun</figcaption></figure>
+        </div>
         <div class="card-g"><i class="ico ico-bw" role="img" aria-label="Blankenberg Wijnen logo"></i><p>${PICKUP}</p></div>
       </aside>
     </div>`;
+}
+
+// Twee foto's over elkaar: aanwijzen brengt er een naar voren; op telefoons wisselen ze om de 10 seconden
+let stackTimer = null;
+function stackInit() {
+  clearInterval(stackTimer);
+  const st = document.getElementById("stack"); if (!st) return;
+  const figs = [...st.querySelectorAll(".st")];
+  const bring = f => figs.forEach(x => x.classList.toggle("front", x === f));
+  figs.forEach(f => { f.addEventListener("mouseenter", () => bring(f)); f.addEventListener("focus", () => bring(f)); f.addEventListener("click", () => bring(f)); });
+  if (window.matchMedia && matchMedia("(hover: none)").matches) {
+    stackTimer = setInterval(() => { if (!document.getElementById("stack")) return clearInterval(stackTimer); bring(figs.find(f => !f.classList.contains("front"))); }, 10000);
+  }
 }
 
 function practical() {
