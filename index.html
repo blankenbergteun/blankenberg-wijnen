@@ -473,6 +473,7 @@ select { border-radius: 2px; }
 .credit2 { display: inline-block; margin-top: 12px; font-size: 11px; color: var(--muted); text-decoration: none; }
 .credit2:hover { text-decoration: underline; }
 .phero { padding-block: 10px 20px; }
+.print.p-bottle { padding-bottom: 34px; } .print.p-photo { padding-bottom: 26px; }
 </style>
 </head>
 <body>
@@ -637,9 +638,17 @@ const ABOUT = {
  "Bodegas Chaves": {
   "t": "Cándido Chaves richtte in 1955 het oudste wijnhuis van Rías Baixas op, in Galicië. Hij was een van de eersten die serieus met Albariño werkte. In de jaren tachtig trommelde hij andere wijnmakers op om de streek erkend te krijgen, en in 1988 werd Rías Baixas een D.O. Hun wijngaarden liggen in Val do Salnés, de oudste subzone. De derde generatie runt het bedrijf nu."
  },
+ "Domaine François Carillon": {
+  "t": "De familie Carillon werkt al eeuwen in Puligny-Montrachet. De archieven gaan terug tot 1520. François runde het domein samen met zijn vader Louis en broer Jacques, tot het in 2010 tussen de broers werd verdeeld. Hij heeft nu zo'n 16 hectare in Puligny, Chassagne en Saint-Aubin. Sinds 1992 wordt de grond mechanisch of met paarden bewerkt, zonder onkruidverdelger, en snoeien en plukken gebeurt met de hand."
+ },
+ "Château Latour": {
+  "t": "Château Latour is sinds de classificatie van 1855 een van de premiers grands crus van Bordeaux. De naam komt van een versterkte toren uit de veertiende eeuw. François Pinault is sinds 1993 eigenaar. Sinds 2015 is de hele wijngaard biologisch, gecertificeerd in 2018. Le Pauillac is de derde wijn, van jongere stokken en percelen buiten de kernwijngaard rond het château, met zo'n 45% Merlot."
+ },
  "Château Le Crock": {
-  "t": "Volgens ons een van de beste wijnen uit Bordeaux als het om prijs-kwaliteit gaat. Topkwaliteit voor een verrassend goede prijs, met veel bewaarpotentieel (10+ jaar).",
-  "src": "Uit onze brochure van oktober 2024, over de 2018"
+  "t": "Le Crock ligt in Saint-Estèphe, naast Cos d'Estournel en Montrose. De familie Cuvelier, ook eigenaar van Léoville Poyferré, kocht het in 1903. Het gaat om ruim 30 hectare, vooral Cabernet Sauvignon en Merlot. De grond wordt mechanisch bewerkt, zonder onkruidverdelger. Sinds 2020 is het Cru Bourgeois Exceptionnel."
+ },
+ "Château d'Yquem": {
+  "t": "Yquem is de enige wijn die in 1855 de status Premier Cru Supérieur kreeg. Y, of Ygrec, is de droge witte wijn van het château: Sauvignon Blanc met Sémillon, geplukt voordat de edele rotting toeslaat. De eerste Y was van 1959. Sinds 2004 wordt hij elk jaar gemaakt, maar slechts zo'n 10.000 flessen. Hij rijpt tien maanden op eiken, waarvan een derde nieuw."
  }
 };
 const WTEXT = {
@@ -650,6 +659,18 @@ const WTEXT = {
  "bo-vf": {
   "t": "Deze Barolo heeft ons enorm verbaasd. Het is een vrij onbekend huis, maar wij denken dat het binnen een paar jaar stevig in prijs kan stijgen als het grotere publiek deze wijnen ontdekt.",
   "src": "Uit onze brochure van oktober 2024, over de 2016"
+ },
+ "lc-19": {
+  "t": "Volgens ons een van de beste wijnen uit Bordeaux als het om prijs-kwaliteit gaat. Topkwaliteit voor een verrassend goede prijs, met veel bewaarpotentieel (10+ jaar).",
+  "src": "Uit onze brochure van oktober 2024, over de 2018"
+ },
+ "lc-20": {
+  "t": "Volgens ons een van de beste wijnen uit Bordeaux als het om prijs-kwaliteit gaat. Topkwaliteit voor een verrassend goede prijs, met veel bewaarpotentieel (10+ jaar).",
+  "src": "Uit onze brochure van oktober 2024, over de 2018"
+ },
+ "lc-22": {
+  "t": "Volgens ons een van de beste wijnen uit Bordeaux als het om prijs-kwaliteit gaat. Topkwaliteit voor een verrassend goede prijs, met veel bewaarpotentieel (10+ jaar).",
+  "src": "Uit onze brochure van oktober 2024, over de 2018"
  }
 };
 
@@ -826,8 +847,8 @@ function renderProduct(w) {
     <section class="phero2 k-${w.k}">
       <div class="phero2-in">
         <div class="prints">
-          ${REGION[w.pr.slug] ? `<figure class="print p-photo"><img src="${REGION[w.pr.slug].src}" alt="Wijngaarden in ${esc(REGION[w.pr.slug].cap)}"><figcaption>${esc(REGION[w.pr.slug].cap)}</figcaption></figure>` : `<figure class="print p-label">${labelArt(w.pr)}</figure>`}
-          <figure class="print p-bottle"><div class="inner">${scribble(w)}${BOTTLES[w.id] ? `<img class="bottle-img" src="${BOTTLES[w.id]}" alt="Fles ${esc(w.prod)} ${esc(w.n)}">` : `<div class="bottle-draw">${bottle(w)}</div>`}</div><figcaption>${esc(w.pr.w.split(" · ")[0].split(",")[0])}</figcaption></figure>
+          ${REGION[w.pr.slug] ? `<figure class="print p-photo"><img src="${REGION[w.pr.slug].src}" alt="Wijngaarden in ${esc(REGION[w.pr.slug].cap)}"></figure>` : `<figure class="print p-label">${labelArt(w.pr)}</figure>`}
+          <figure class="print p-bottle"><div class="inner">${scribble(w)}${BOTTLES[w.id] ? `<img class="bottle-img" src="${BOTTLES[w.id]}" alt="Fles ${esc(w.prod)} ${esc(w.n)}">` : `<div class="bottle-draw">${bottle(w)}</div>`}</div></figure>
         </div>
         <div class="pinfo">
           <nav class="crumbs" aria-label="Kruimelpad"><a href="#">Alle wijnen</a><span>›</span><a href="#producenten">Producenten</a><span>›</span><a href="#p-${w.pr.slug}">${esc(w.prod)}</a></nav>
@@ -900,7 +921,7 @@ function renderProducer(pr) {
   document.getElementById("view").innerHTML = `
     <nav class="crumbs" aria-label="Kruimelpad"><a href="#">Alle wijnen</a><span>›</span><a href="#producenten">Producenten</a><span>›</span><span>${esc(pr.n)}</span></nav>
     <section class="phero">
-      ${REGION[pr.slug] ? `<div class="prints prod-prints"><figure class="print p-photo"><img src="${REGION[pr.slug].src}" alt="${esc(pr.n)}"><figcaption>${esc(REGION[pr.slug].cap)}</figcaption></figure><figure class="print p-label">${labelArt(pr)}</figure></div>` : `<div class="stage lstage">${labelArt(pr)}</div>`}
+      ${REGION[pr.slug] ? `<div class="prints prod-prints"><figure class="print p-photo"><img src="${REGION[pr.slug].src}" alt="${esc(pr.n)}"></figure><figure class="print p-label">${labelArt(pr)}</figure></div>` : `<div class="stage lstage">${labelArt(pr)}</div>`}
       <div>
         <div class="c-prod">${esc(pr.w)} · ${esc(pr.c)}</div>
         <h1>${esc(pr.n)}</h1>
