@@ -523,6 +523,14 @@ select { border-radius: 2px; }
 .stack .st2 img { aspect-ratio: 458 / 560; object-fit: cover; }
 @media (max-width: 800px) { .stack { max-width: 380px; margin: 0 auto; } }
 @media (prefers-reduced-motion: reduce) { .stack .st { transition: none; } }
+
+/* Producentenoverzicht: etiket vult het hele vak */
+.pcard .stage.lstage { padding: 0; }
+.pcard .lstage .label-img { inset: 0; width: 100%; height: 100%; object-fit: cover; filter: none; box-shadow: none; }
+.pcard .lstage .label-art { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; aspect-ratio: auto; box-shadow: none; border: 0; }
+.pcard .lstage .label-art::before { inset: 10px; }
+.pcard .label-img, .pcard .label-art { transition: transform .4s ease; }
+.pcard:hover .label-img, .pcard:hover .label-art { transform: scale(1.04); }
 </style>
 </head>
 <body>
