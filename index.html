@@ -496,6 +496,15 @@ select { border-radius: 2px; }
 .pay-ico { display: block; height: 54px; color: var(--accent); margin-bottom: 8px; }
 .pay-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
 .pay-btn .ico { height: 20px; }
+
+.about .lead { font-size: 17px; }
+.bros { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 26px 0 30px; }
+.bro { border-top: 1px solid var(--line); padding-top: 14px; }
+.about .bro h2 { margin: 0 0 8px; font-size: 34px; font-weight: 300; }
+.bro p { font-size: 15px; }
+@media (max-width: 640px) { .bros { grid-template-columns: 1fr; } }
+.team { background: #fff; padding: 10px 10px 12px; box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 12px 28px rgba(0,0,0,.12); transform: rotate(1.5deg); }
+.team figcaption { font-family: var(--hand); font-weight: 300; font-size: 20px; color: #1E2A22; text-align: center; margin-top: 8px; }
 </style>
 </head>
 <body>
@@ -1149,20 +1158,30 @@ function renderAbout() {
     <div class="about">
       <div>
         <h1 class="page-h">Over ons</h1>
-        <p>Blankenberg Wijnen is een klein wijnbedrijf van twee broers: Sjoerd en Teun Blankenberg. Drie keer per jaar stellen wij een lijst samen met wijnen uit klassieke wijngebieden, gekozen op prijs-kwaliteit.</p>
+        <p class="lead">Wij zijn Sjoerd en Teun Blankenberg, twee broers uit een gezin waar alles om eten draaide. Onze moeder deed catering, en wij waren haar vaste proefkonijnen. Wat smaakt, wat mist er nog, wat past erbij: dat leerden we aan de keukentafel, lang voordat we wisten dat het een vak was. Het is ons met de paplepel ingegoten.</p>
+        <div class="bros">
+          <section class="bro">
+            <h2>Teun</h2>
+            <p>Teun stond op zijn vijftiende voor het eerst in een restaurantkeuken en was meteen verkocht. Tijdens zijn studie kwam daar steeds meer wijn bij. Hij haalde zijn SDEN-3 en WSET-3 en maakte er zijn werk van: de afgelopen vijf jaar als inkoper en supply chain manager in de wijnhandel.</p>
+            <p>Hij neemt wijn serieus, maar verliest nooit uit het oog waar het om draait: een fles opentrekken met mensen om je heen.</p>
+          </section>
+          <section class="bro">
+            <h2>Sjoerd</h2>
+            <p>Ook Sjoerd stond altijd met één been in de keuken. Na een jaar als kok in Nice ging hij studeren in Utrecht. Daar schoof hij geregeld aan bij oom Huub, die al sinds zijn studententijd wijn verzamelt en een kelder vol oude flessen heeft. Bij een glas Domaine de Chevalier 2010 ging het licht aan. Sindsdien verzamelt Sjoerd zelf.</p>
+            <p>Met zijn achtergrond in bedrijfskunde zoekt hij altijd de fles die meer geeft dan hij kost. En zet je hem een glas blind voor, dan zit hij er bijna altijd verrassend dichtbij.</p>
+          </section>
+        </div>
         <p>We gaan graag zelf langs bij de producenten. In 2021 bezochten we het domein van Justin Girardin in Santenay, en in 2022 waren we bij August Kesseler in de Rheingau.</p>
         <h2>Hoe het werkt</h2>
         <ol class="how">
           <li><span><b>Wij stellen de lijst samen</b>Drie keer per jaar, met wijnen die wij zelf geproefd en gekozen hebben.</span></li>
-          <li><span><b>Jij bestelt per doos</b>Alle wijnen gaan per doos van 6. Magnums per 3. Twijfel je, begin dan met een proefdoos.</span></li>
-          <li><span><b>Wij kopen in en leveren</b>Na betaling bestellen wij de wijn bij de producent of importeur en laten hem leveren in Amsterdam.</span></li>
+          <li><span><b>Jij bestelt per doos</b>De meeste wijnen gaan per doos van 6, magnums per 3. Twijfel je, begin dan met een proefdoos.</span></li>
+          <li><span><b>Wij kopen in en leveren</b>Na betaling bestellen wij de wijn en laten we hem leveren in Amsterdam.</span></li>
           <li><span><b>Jij haalt op</b>Op ${PICKUP}. Bezorgen kan in overleg, tegen een vergoeding.</span></li>
         </ol>
-        <h2>Wie wij zijn</h2>
-        <div class="todo">Hier komt een korte tekst over jullie twee: namen, achtergrond, hoe jullie bij wijn zijn gekomen.</div>
       </div>
       <aside class="side">
-        <figure class="team"><img src="${PHOTO}" alt="Sjoerd en Teun Blankenberg tussen de wijnstokken" width="700" height="933"></figure>
+        <figure class="team"><img src="${PHOTO}" alt="Sjoerd en Teun Blankenberg in de wijngaard van Château Tour des Gendres" width="700" height="933"><figcaption>Château Tour des Gendres, Bergerac</figcaption></figure>
         <div class="card-g"><i class="ico ico-bw" role="img" aria-label="Blankenberg Wijnen logo"></i><p>${PICKUP}</p></div>
       </aside>
     </div>`;
