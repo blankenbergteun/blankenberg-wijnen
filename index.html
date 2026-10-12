@@ -510,7 +510,7 @@ const LOGO = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAAE5CAYAAADvFIfM
 
 const P = [
  { c:"Frankrijk", n:"Tracy & Cie", w:"Loire", wines:[
-   {id:"tr-chenin", n:"Chenin Blanc", y:"2024", k:"wit", p:13.5},
+   {id:"tr-chenin", n:"Chenin (Touraine)", y:"2024", k:"wit", p:13.5},
    {id:"tr-menetou", n:"Menetou-Salon", y:"2025", k:"wit", p:19.5},
    {id:"tr-pn", n:"Pinot Noir", y:"2025", k:"rood", p:13.5} ]},
  { c:"Frankrijk", n:"Domaine Albert Joly", w:"Bourgogne", wines:[
@@ -530,7 +530,7 @@ const P = [
    intro:"Op het etiket staat “Marcel et Blanche Fèvre-Fèvre”: een eerbetoon aan de grootouders van Gilles. Zoek je deze flessen, dan is dat dus dezelfde wijn.", wines:[
    {id:"fe-ch", n:"Chablis", y:"2025", k:"wit", p:19.95},
    {id:"fe-chm", n:"Chablis", y:"2025", k:"wit", p:49.95, fmt:"Magnum", unit:3},
-   {id:"fe-prs", n:"Chablis Grand Cru Les Preuses (bio)", y:"2023", k:"wit", p:77.95} ]},
+   {id:"fe-prs", n:"Chablis Grand Cru Les Preuses", y:"2023", k:"wit", p:77.95} ]},
  { c:"Frankrijk", n:"Château Latour", w:"Pauillac, Bordeaux", wines:[
    {id:"la-pdl", n:"Le Pauillac de Latour", y:"2019", k:"rood", p:87.95},
    {id:"la-pdlm", n:"Le Pauillac de Latour", y:"2019", k:"rood", p:194.95, fmt:"Magnum", unit:1} ]},
@@ -542,7 +542,7 @@ const P = [
    {id:"yq-y", n:"Y d'Yquem", y:"2023", k:"wit", p:195, unit:1} ]},
 
  { c:"Oostenrijk", n:"Bernhard Ott", w:"Wagram", wines:[
-   {id:"ot-ab", n:"Am Berg Grüner Veltliner", y:"2025", k:"wit", p:15.95},
+   {id:"ot-ab", n:"Am Berg Grüner Veltliner", y:"2025", k:"wit", p:15.95, minBoxes:2},
    {id:"ot-abm", n:"Am Berg Grüner Veltliner", y:"2025", k:"wit", p:35.95, fmt:"Magnum", unit:3},
    {id:"ot-f4", n:"Fass 4 Grüner Veltliner", y:"2025", k:"wit", p:20.95},
    {id:"ot-st", n:"Ried Stein", y:"2023", k:"wit", p:49.95},
@@ -550,35 +550,35 @@ const P = [
    {id:"ot-stdm", n:"Ried Stein", y:"2023", k:"wit", p:249.5, fmt:"Dubbele magnum", unit:1} ]},
 
  { c:"Italië", n:"Luigi Pira", w:"Serralunga d'Alba, Piemonte", wines:[
-   {id:"pi-ser", n:"Barolo Serralunga", y:"2022", k:"rood", p:36.95} ]},
+   {id:"pi-ser", n:"Barolo del Comune di Serralunga d'Alba", y:"2022", k:"rood", p:36.95} ]},
  { c:"Italië", n:"Renato Corino", w:"La Morra, Piemonte", wines:[
-   {id:"co-lm", n:"Barolo La Morra", y:"2022", k:"rood", p:37.95} ]},
+   {id:"co-lm", n:"Barolo del Comune di La Morra", y:"2022", k:"rood", p:37.95} ]},
  { c:"Italië", n:"Schiavenza", w:"Serralunga d'Alba, Piemonte", wines:[
    {id:"sc-pe", n:"Barolo Perno", y:"2021", k:"rood", p:39.95} ]},
  { c:"Italië", n:"Silvano Bolmida", w:"Monforte d'Alba, Piemonte", wines:[
-   {id:"bo-vf", n:"Barolo Vigna dei Fantini", y:null, yNote:"2019 of 2021", k:"rood", p:37.95},
-   {id:"bo-lc", n:"Le Coste di Monforte", y:"2021", k:"rood", p:34.95} ]},
+   {id:"bo-vf", n:"Barolo Bussia Vigna dei Fantini", y:"2019", k:"rood", p:37.95},
+   {id:"bo-lc", n:"Barolo Le Coste di Monforte", y:"2021", k:"rood", p:34.95} ]},
  { c:"Italië", n:"Nervi-Conterno", w:"Gattinara, Piemonte", wines:[
    {id:"ne-ro", n:"Il Rosato", y:"2025", k:"rose", p:24.95},
-   {id:"ne-gam", n:"Gattinara", y:"2018", k:"rood", p:129.95, fmt:"Magnum", unit:3} ]},
+   {id:"ne-gam", n:"Gattinara", y:"2018", k:"rood", p:129.95, fmt:"Magnum", unit:1} ]},
  { c:"Italië", n:"Francesco Iandolo", w:"Colli Tortonesi, Piemonte", wines:[
    {id:"ia-der", n:"Timorasso Derthona", y:"2022", k:"wit", p:24.95} ]},
  { c:"Italië", n:"Von Blumen", w:"Alto Adige", wines:[
-   {id:"vb-wb", n:"Weissburgunder Reserve", y:null, k:"wit", p:27.95} ]},
+   {id:"vb-wb", n:"Flowers Weissburgunder Riserva", y:"2023", k:"wit", p:27.95} ]},
  { c:"Italië", n:"Famiglia Statella", w:"Etna, Sicilië", wines:[
-   {id:"st-b", n:"Etna Bianco", y:null, k:"wit", p:27.95},
-   {id:"st-r", n:"Etna Rosso", y:null, k:"rood", p:27.95} ]},
+   {id:"st-b", n:"Etna Bianco", y:"2025", k:"wit", p:27.95},
+   {id:"st-r", n:"Etna Rosso", y:"2022", k:"rood", p:27.95} ]},
 
  { c:"Spanje", n:"Bodegas Leza García", w:"Rioja Alta · nieuw: Priorat", isNew:"Nieuw: Priorat", wines:[
    {id:"lz-tb", n:"Rioja Tempranillo Blanco Crianza ‘Viñedos de Altura’", y:"2024", k:"wit", p:12.95},
    {id:"lz-res", n:"Rioja Reserva", y:"2020", k:"rood", p:13.95},
-   {id:"lz-prr", n:"Priorat Tinto", y:"2025", k:"rood", p:19.95},
-   {id:"lz-prw", n:"Priorat Blanco", y:"2025", k:"wit", p:19.95} ]},
+   {id:"lz-prr", n:"Priorat Garnacha Tinta 'Cuvée'", y:"2025", k:"rood", p:19.95},
+   {id:"lz-prw", n:"Priorat Garnacha Blanca", y:"2025", k:"wit", p:19.95} ]},
  { c:"Spanje", n:"Barbadillo", w:"Sanlúcar de Barrameda, Andalusië", wines:[
    {id:"ba-mir", n:"Ás de Mirabrás", y:"2025", k:"wit", p:14.95} ]},
  { c:"Spanje", n:"Bodegas Chaves", w:"Rías Baixas, Galicië", wines:[
    {id:"cv-cf", n:"Albariño Castel de Fornos", y:"2025", k:"wit", p:12.95},
-   {id:"cv-cfm", n:"Albariño Castel de Fornos", y:"2026", k:"wit", p:28.95, fmt:"Magnum", unit:3} ]},
+   {id:"cv-cfm", n:"Albariño Castel de Fornos", y:"2025", k:"wit", p:28.95, fmt:"Magnum", unit:1} ]},
 ];
 
 // FleSvorm per producent (bdx = Bordeaux/Barolo/Rioja, bgd = Bourgogne, flute = Oostenrijk/Alto Adige)
@@ -652,25 +652,165 @@ const ABOUT = {
  }
 };
 const WTEXT = {
- "ch-pn": {
-  "t": "Een heerlijke fruitgedreven pinot noir in klassieke Bourgogne-stijl. Een van de beste koopjes uit het gebied.",
-  "src": "Uit onze brochure van oktober 2024, eerdere jaargang"
+ "tr-chenin": {
+  "t": "Droge chenin uit de Touraine. Appel, kweepeer, strak afgedronken. Werkt als aperitief, maar houdt zich net zo goed bij het eten.",
+  "src": "Uit onze brochure van september 2026"
  },
- "bo-vf": {
-  "t": "Deze Barolo heeft ons enorm verbaasd. Het is een vrij onbekend huis, maar wij denken dat het binnen een paar jaar stevig in prijs kan stijgen als het grotere publiek deze wijnen ontdekt.",
-  "src": "Uit onze brochure van oktober 2024, over de 2016"
+ "tr-menetou": {
+  "t": "Een uitstekend alternatief voor Sancerre en Pouilly-Fumé: 100% sauvignon blanc, geen hout. Citrus, kruit, zuiver. Klassiek bij geitenkaas of schaaldieren.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "tr-pn": {
+  "t": "Lichte, koele pinot. Rood fruit en aarde, weinig tannine. Licht gekoeld drinken.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "fe-ch": {
+  "t": "Strak, citrusachtig en zout, zonder hout. Bij oesters hoeft u niet lang na te denken.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "fe-chm": {
+  "t": "Dezelfde wijn, dubbele fles. Chablis wint aan diepte uit magnum en rijpt langzamer.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "fe-prs": {
+  "t": "Het pronkstuk van het huis: 2,5 hectare met stokken van rond de vijfenvijftig jaar, hoog op de helling en direct naast het perceel van William Fèvre. Zo'n zeventig procent gaat op RVS, de rest op vat. Breed en diep, met een gekussende mineraliteit en laag na laag smaak. Hout ziet u niet; dat is precies de bedoeling.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "jo-pul": {
+  "t": "Handgeplukt, zacht geperst, spontaan vergist op kleine burgundische vaten, twaalf maanden gerijpt. Van de wijnen van het huis de meest klassieke en stalen: dicht steenfruit, mineraliteit, een streep vatkruiden.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ca-cg": {
+  "t": "Het perceel in Champ Gain is een steile twee hectare hoog op de helling, direct naast Saint-Aubins Murgers des Dents de Chien, met stokken van vijftig jaar en ouder op roodachtige, kalkrijke grond vol kiezels. De wijn om weg te leggen.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ch-pn": {
+  "t": "Fruitgedreven pinot in klassieke Bourgognestijl. Een van de betere koopjes uit het gebied, en een goede manier om het handschrift van het huis te leren kennen.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ch-vr": {
+  "t": "Chezeaux heeft hier een kleine veertig are, in het zuiden van Vosne-Romanée tegen de grens met Nuits-Saint-Georges, pal onder La Tâche en Aux Malconsorts. Kalkmergel, oostelijke ligging, 250 meter hoogte. Vijftien tot achttien maanden op vat, waarvan 30% nieuw. Specerijen, drop, rozen en cacao, met de elegantie van Vosne en iets van de mineraliteit van Nuits erdoorheen. Bij wild of rood vlees in een wijnsaus.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "la-pdl": {
+  "t": "Cassis, pruim, tabaksblad en een streep potlood. Middenzwaar tot vol, met fijne tannine en die typische Latour-textuur. Nu al genietbaar, maar hij heeft ruim tien jaar voor de boeg.",
+  "src": "Uit onze brochure van september 2026"
  },
  "lc-19": {
-  "t": "Volgens ons een van de beste wijnen uit Bordeaux als het om prijs-kwaliteit gaat. Topkwaliteit voor een verrassend goede prijs, met veel bewaarpotentieel (10+ jaar).",
-  "src": "Uit onze brochure van oktober 2024, over de 2018"
+  "t": "Warm en gul jaar. Zwarte bes, aarde, sigarenkist. Stevig en breed, met rijpe tannine.",
+  "src": "Uit onze brochure van september 2026"
  },
  "lc-20": {
-  "t": "Volgens ons een van de beste wijnen uit Bordeaux als het om prijs-kwaliteit gaat. Topkwaliteit voor een verrassend goede prijs, met veel bewaarpotentieel (10+ jaar).",
-  "src": "Uit onze brochure van oktober 2024, over de 2018"
+  "t": "Iets strakker en frisser dan de 2019. Van de drie het snelst op dronk.",
+  "src": "Uit onze brochure van september 2026"
  },
  "lc-22": {
-  "t": "Volgens ons een van de beste wijnen uit Bordeaux als het om prijs-kwaliteit gaat. Topkwaliteit voor een verrassend goede prijs, met veel bewaarpotentieel (10+ jaar).",
-  "src": "Uit onze brochure van oktober 2024, over de 2018"
+  "t": "Het meest geconcentreerd van de drie en de wijn om te bewaren. Geef hem tijd, of geef hem lucht.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "yq-y": {
+  "t": "Voor het eerst in de geschiedenis van de wijn een blend van precies vijftig procent sauvignon blanc en vijftig procent sémillon. De sauvignon brengt citrus en kruidigheid, de sémillon rijkdom en textuur. Fris en levendig, tegelijk vol en romig, met een lange minerale afdronk. Zeldzaam, en niet alleen als verzamelobject: dit is een wijn om bij een serieus visgerecht te drinken.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ot-ab": {
+  "t": "De instapwijn, en meteen een van de beste koopjes van Oostenrijk. Geplukt in Engabrunn, Feuersbrunn en Großriedenthal, licht gekneusd met wat schilcontact voor het persen, daarna spontane gisting.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ot-f4": {
+  "t": "De wijn die Otts naam heeft gemaakt, een merk dat al sinds 1988 bestaat, genoemd naar het vat dat ooit ieder jaar door één klant met de hand werd uitgekozen. Tegenwoordig geen houtrijping meer, waardoor het karakter van de losse percelen juist geconcentreerder doorkomt.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ot-st": {
+  "t": "Erste Lage in Engabrunn en het buitenbeentje van het huis: gneis in plaats van löss, en daardoor mineraler en fijner getekend.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "pi-ser": {
+  "t": "Een assemblage van drie wijngaarden in de gemeente, gerijpt op grote botti. Serralunga in zijn klassieke vorm: leer, hooi, aarde en specerijen, met de structuur en de tannine waar het dorp om bekendstaat. Dit is de goedkoopste manier om te begrijpen waarom mensen zo doen over Serralunga.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "co-lm": {
+  "t": "100% nebbiolo van meerdere percelen in La Morra. Waar Serralunga structuur en tannine geeft, geeft La Morra parfum en fijnheid: aardbei, kers, roos en mineraal. Van alle Barolo's op deze lijst is dit de wijn die het snelst toegankelijk is.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "bo-vf": {
+  "t": "Het hoogste stuk van de MGA Bussia, één hectare op 450 meter, pal op het zuiden en behoorlijk steil. De bodem wisselt tussen zand en compacte kalksteenlagen: de Arenaria di Diano. Dat levert een Barolo op met veel zoete specerij in de neus, kaneel en nootmuskaat, iets minder body dan de gewone Bussia maar zeker niet minder goed.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "bo-lc": {
+  "t": "De hoogste en laatst geplukte wijngaard van het huis, op 470 meter met ligging op het zuidoosten, op klei en leem met wit-grijze zanden. Een van de zuidelijkste MGA's van de hele appellatie. Fijn en delicaat: kers, onderhout, leer, bloemen. Elegant in plaats van luid.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "sc-pe": {
+  "t": "De enige Barolo die dit huis buiten Serralunga maakt, van 1,8 hectare in Perno, een gehucht van Monforte d'Alba, tussen de 300 en 400 meter. Waar de bodems in Serralunga kleiig zijn, is Perno gebouwd op Arenaria di Diano: zandig en droog. Dezelfde vinificatie als hun andere Barolo's, maar het resultaat is merkbaar eleganter. Kracht én finesse in één glas.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ne-ro": {
+  "t": "100% nebbiolo, vergist op RVS en vier maanden op de gistcellen in tank. Aardbei, bloedsinaasappel en bloemen, met een rokerige minerale onderlaag. Dit is geen rosé voor het aanrecht: hij heeft genoeg vlees om er een maaltijd bij te eten, en houdt zich een paar jaar goed.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ne-gam": {
+  "t": "Lange gisting en drie tot vier jaar op oude Slavonische botti, precies zoals Conterno het in de Barolo doet. Gattinara heeft de geur van nebbiolo maar een spannender, scherpere mineraliteit door de vulkanische bodem. Uit magnum heeft deze wijn nog decennia.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "vb-wb": {
+  "t": "Zachte appel, witte perzik, wilde bloemen en munt. Vol en intens in de mond, met een romige textuur en een fijne vanilletoon. Weissburgunder wordt vaak weggezet als de saaie broer van chardonnay; dit is het tegenbewijs. Bij vis, schaaldieren of een romige risotto.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "st-b": {
+  "t": "90% carricante en 10% catarratto, van een wijngaard in de gemeente Randazzo. Witte bloemen en rijp steenfruit, met een prettige zure toets die de mineraliteit optilt. Bij vis.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "st-r": {
+  "t": "Van de wijngaarden in Pettinociarelle, Castiglione di Sicilia. Nerello mascalese met wat nerello cappuccio. Rood fruit en mediterrane kruiden, wat peper en balsemachtige tonen, met fluweelzachte maar dichte tannine.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ia-der": {
+  "t": "De wijngaarden liggen bij het dorpje Brignano Frascata, zo'n vijftien kilometer ten zuidwesten van Tortona, op 380 meter met ligging op het zuidwesten, op klei en kalksteen. Twaalf maanden op RVS met wekelijkse bâtonnage, daarna nog twaalf maanden rust op fles. Citroen, meloen en kweepeer, en met wat ouderdom honing, hooi en bijenwas. Gestructureerd en mondvullend, met uitgesproken frisheid en duidelijke mineraliteit. Bij risotto met saffraan en merg. Dit is een witte wijn om te bewaren.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "lz-prw": {
+  "t": "Van 600 tot 700 meter. Handgeplukt, ontsteeld, koude inweking, vergist in RVS op 16 graden en daarna drie maanden op de gistcellen. Geen eikenhout, een bewuste keuze om het pure en frisse karakter te bewaren. Mediterrane bergkruiden, salie, citrus en oranjebloesem. Verfrissend en duidelijk mineraal, heel subtiel romig. Lekker bij een risotto met salie.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "lz-prr": {
+  "t": "Van 650 tot 750 meter, zes maanden op de gistcellen, ook zonder hout. Bramen, granaatappel, hibiscus, kruiden en een hint rook. Sappig zwart fruit met minerale tonen, precieze zuren en fijne tannine. Bij geroosterd lamsvlees met rozemarijn.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "lz-res": {
+  "t": "Klassieke Rioja Reserva van tempranillo, met de vatrijping die daarbij hoort. Rijp rood fruit, vanille en leer. Voor dit geld zelden zo goed.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "lz-tb": {
+  "t": "Witte Rioja van tempranillo blanco, een druif die pas sinds 2007 officieel is toegestaan in de streek. Van hooggelegen percelen, met houtrijping. Voor deze prijs een ongewoon serieuze witte wijn.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ba-mir": {
+  "t": "Twee jaar hebben ze gedaan over het selecteren van de oude stokken: percelen in Miraflores, Macharnudo, Campix, Añina en Santa Lucía, historische lappen grond waar de beste wijnen van Cádiz vandaan komen. Vergist op RVS met eigen gisten, geen flor, geen hout. Wat overblijft is pure albariza: zout, strak en verrassend gelaagd. Voor deze prijs een van de meest bijzondere flessen op deze lijst.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "cv-cf": {
+  "t": "Vernoemd naar de eerste wijngaard van de familie, op droge steenachtige hellingen bij het dorp Fornos, op graniet. Honderd procent albariño van oude stokken, geen hout. Witte bloemen, peer, appel en citrus, met een zoute Atlantische afdronk. Bij kokkels, mosselen of gewoon een bord garnalen.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ot-abm": {
+  "t": "De instapwijn, en meteen een van de beste koopjes van Oostenrijk. Geplukt in Engabrunn, Feuersbrunn en Großriedenthal, licht gekneusd met wat schilcontact voor het persen, daarna spontane gisting.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ot-stm": {
+  "t": "Erste Lage in Engabrunn en het buitenbeentje van het huis: gneis in plaats van löss, en daardoor mineraler en fijner getekend.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "ot-stdm": {
+  "t": "Erste Lage in Engabrunn en het buitenbeentje van het huis: gneis in plaats van löss, en daardoor mineraler en fijner getekend.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "la-pdlm": {
+  "t": "Cassis, pruim, tabaksblad en een streep potlood. Middenzwaar tot vol, met fijne tannine en die typische Latour-textuur. Nu al genietbaar, maar hij heeft ruim tien jaar voor de boeg.",
+  "src": "Uit onze brochure van september 2026"
+ },
+ "cv-cfm": {
+  "t": "Vernoemd naar de eerste wijngaard van de familie, op droge steenachtige hellingen bij het dorp Fornos, op graniet. Honderd procent albariño van oude stokken, geen hout. Witte bloemen, peer, appel en citrus, met een zoute Atlantische afdronk. Bij kokkels, mosselen of gewoon een bord garnalen.",
+  "src": "Uit onze brochure van september 2026"
  }
 };
 
@@ -781,7 +921,7 @@ function card(w) {
       <div class="c-body">
         <div class="c-prod">${esc(w.prod)}</div>
         <div class="c-name">${esc(w.n)}</div>
-        <div class="c-meta"><i class="dot ${w.k}"></i>${kleur[w.k]} · ${yearTxt(w)}</div>
+        <div class="c-meta"><i class="dot ${w.k}"></i>${kleur[w.k]} · ${yearTxt(w)}${w.minBoxes ? ` · <span class="flag">vanaf ${w.minBoxes*6} flessen</span>` : ""}</div>
       </div>
     </a>
     <div class="c-foot">
@@ -822,7 +962,7 @@ const saveF = () => { try { localStorage.setItem("bbw-shop-filter", JSON.stringi
 
 function text(obj) {
   if (!obj) return `<div class="todo">Tekst volgt uit de goedgekeurde brochure.</div>`;
-  return `<p>${esc(obj.t)}</p>${obj.src ? `<div class="src">${esc(obj.src)}</div>` : ""}`;
+  return `<p>${esc(obj.t)}</p>${obj.src && !/september 2026/.test(obj.src) ? `<div class="src">${esc(obj.src)}</div>` : ""}`;
 }
 
 // Getekend landschap per streek (zelfde streek = zelfde heuvels)
@@ -857,7 +997,7 @@ function renderProduct(w) {
           <div class="p-sub"><span><i class="dot ${w.k}"></i>${kleur[w.k]}</span><span>${yearTxt(w)}</span><span>${esc(w.pr.w)}</span></div>
           <div class="p-price"><b>${eur(w.p)}</b><span>${w.unit === 1 ? (w.fmt ? w.fmt.toLowerCase() + " per stuk" : "per fles") : `${eur(w.p*w.unit)} (${eur(w.p)} per fles) · ${unitLabel(w)}`}</span></div>
           <div class="buy">
-            ${stepper(w.id, Math.max(q,1), true).replace('class="step inline"','class="step inline" id="pdpStep"').replace(/data-(dec|inc)="[^"]+"/g, (m,a) => `data-p${a}="${w.id}"`)}
+            ${stepper(w.id, Math.max(q, w.minBoxes || 1), true).replace('class="step inline"','class="step inline" id="pdpStep"').replace(/data-(dec|inc)="[^"]+"/g, (m,a) => `data-p${a}="${w.id}"`)}
             <button class="primary" id="pdpAdd">${q ? "Bijwerken in mandje" : (w.unit === 1 ? "In mandje" : "Doos in mandje")}</button>
           </div>
           <div class="added" id="added" aria-live="polite">${q ? `Nu ${q} ${w.unit === 1 ? "stuks" : (q === 1 ? "doos" : "dozen")} in je mandje.` : ""}</div>
@@ -886,9 +1026,9 @@ function renderProduct(w) {
     </div>
     ${siblings.length ? `<section class="more"><h2>Meer van ${esc(w.prod)}</h2><div class="grid">${siblings.map(card).join("")}</div></section>` : ""}
     ${practical()}`;
-  let pq = Math.max(q,1);
+  const mb = w.minBoxes || 1; let pq = Math.max(q, mb);
   const out = () => document.querySelector("#pdpStep output");
-  document.querySelector("[data-pdec]").onclick = () => { pq = Math.max(0, pq-1); out().textContent = `${pq} ${w.unit === 1 ? "st." : "ds."}`; };
+  document.querySelector("[data-pdec]").onclick = () => { pq = pq - 1 < mb ? 0 : pq - 1; out().textContent = `${pq} ${w.unit === 1 ? "st." : "ds."}`; };
   document.querySelector("[data-pinc]").onclick = () => { pq++; out().textContent = `${pq} ${w.unit === 1 ? "st." : "ds."}`; };
   document.getElementById("pdpAdd").onclick = () => {
     setQty(w.id, pq, true);
@@ -1038,9 +1178,9 @@ document.addEventListener("click", e => {
   if (f) { if (f.dataset.land) F.land = f.dataset.land; if (f.dataset.kleur) F.kleur = f.dataset.kleur; saveF(); renderShop(); return; }
   const t = e.target.closest("[data-add],[data-inc],[data-dec],[data-rm]");
   if (!t) return;
-  if (t.dataset.add) setQty(t.dataset.add, 1);
+  if (t.dataset.add) setQty(t.dataset.add, WINE[t.dataset.add].minBoxes || 1);
   if (t.dataset.inc) setQty(t.dataset.inc, (cart[t.dataset.inc]||0) + 1);
-  if (t.dataset.dec) setQty(t.dataset.dec, (cart[t.dataset.dec]||0) - 1);
+  if (t.dataset.dec) { const v = (cart[t.dataset.dec]||0) - 1; setQty(t.dataset.dec, v < (WINE[t.dataset.dec].minBoxes || 1) ? 0 : v); }
   if (t.dataset.rm) setQty(t.dataset.rm, 0);
 });
 
