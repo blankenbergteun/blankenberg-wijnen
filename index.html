@@ -450,14 +450,19 @@ select { border-radius: 2px; }
 
 /* Fles komt tot leven bij aanwijzen */
 .print.p-bottle .inner { overflow: hidden; }
-.print.p-bottle .bottle-img { inset: auto 0 4% 0; top: auto; height: 82%; }
+.print.p-bottle .bottle-img { inset: auto 0 4% 0; top: auto; height: 80%; }
 .print.p-bottle .bottle-draw { inset: 14% 0 4%; }
 .print.p-bottle .bottle-img, .print.p-bottle .bottle-draw { transform-origin: 50% 92%; transition: transform .35s cubic-bezier(.3,1.4,.5,1); }
-.print.p-bottle:hover .bottle-img, .print.p-bottle:hover .bottle-draw { transform: scale(1.12); }
+.print.p-bottle:hover .bottle-img, .print.p-bottle:hover .bottle-draw { transform: scale(1.16); }
 @media (prefers-reduced-motion: no-preference) {
   .print.p-bottle:hover .bottle-img, .print.p-bottle:hover .bottle-draw { animation: sway 1.8s ease-in-out .35s infinite; }
-  @keyframes sway { 0%, 100% { transform: scale(1.12) rotate(0deg); } 25% { transform: scale(1.12) rotate(-2.5deg); } 75% { transform: scale(1.12) rotate(2.5deg); } }
+  @keyframes sway { 0%, 100% { transform: scale(1.16) rotate(0deg); } 25% { transform: scale(1.16) rotate(-2.5deg); } 75% { transform: scale(1.16) rotate(2.5deg); } }
 }
+
+/* Afdrukken komen naar voren bij aanwijzen */
+.print { transition: transform .35s cubic-bezier(.3,1.4,.5,1), box-shadow .35s; }
+.print.p-photo:hover { transform: rotate(1.5deg) scale(1.16) translateX(-4%); z-index: 3; box-shadow: 0 4px 8px rgba(0,0,0,.14), 0 26px 48px rgba(0,0,0,.34); }
+.print.p-bottle:hover { transform: rotate(-1deg) scale(1.07); z-index: 3; box-shadow: 0 4px 8px rgba(0,0,0,.14), 0 26px 48px rgba(0,0,0,.34); }
 </style>
 </head>
 <body>
