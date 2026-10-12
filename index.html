@@ -417,6 +417,29 @@ select { border-radius: 2px; }
 .spec-card .specs th { color: #5E6B61; } .spec-card .specs td { border-color: rgba(30,42,34,.12); }
 .spec-card .prodlink { color: #00542B; }
 @media (max-width: 800px) { .pdp-body { grid-template-columns: 1fr; } .about-prod { grid-template-columns: 90px 1fr; } }
+
+/* ---- Terug naar rustig: geen kleurvlakken of bogen in het overzicht ---- */
+.has-bottle, .has-draw, .has-bottle.k-rood, .has-bottle.k-wit, .has-bottle.k-rose, .has-draw.k-rood, .has-draw.k-wit, .has-draw.k-rose { background: var(--photo-bg); }
+.has-bottle::before, .has-draw::before { display: none; }
+.has-bottle::after, .has-draw::after { bottom: 6%; width: 34%; height: 4%; background: radial-gradient(closest-side, rgba(40,30,15,.18), transparent); }
+
+/* ---- Productpagina: afdrukken in plaats van landschap ---- */
+.phero2 { padding-bottom: 56px; }
+.prints { position: relative; justify-self: center; width: min(100%, 380px); aspect-ratio: 1 / 1.08; }
+.print { position: absolute; margin: 0; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.12), 0 16px 34px rgba(0,0,0,.28); }
+.print.p-bottle { left: 0; top: 0; width: 70%; height: 100%; padding: 12px 12px 50px; transform: rotate(-2.5deg); z-index: 2; }
+.print.p-bottle .inner { position: relative; width: 100%; height: 100%; background: #F3EBDC; overflow: hidden; }
+.print.p-bottle .bottle-img { position: absolute; inset: 6% 0 4%; width: 100%; height: 90%; object-fit: contain; mix-blend-mode: multiply; }
+.print.p-bottle .bottle-draw { inset: 8% 0 4%; }
+.print.p-bottle .scribble { color: #8A6A28; }
+.print figcaption { position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font-family: var(--hand); font-size: 22px; color: #1E2A22; }
+.print.p-label { right: 0; top: 16%; width: 50%; padding: 10px; transform: rotate(6deg); z-index: 1; display: grid; place-items: center; }
+.print.p-label .label-img { position: static; display: block; width: 100%; height: auto; max-height: none; box-shadow: none; filter: none; }
+.print.p-label .label-art { width: 100%; height: auto; font-size: 11px; box-shadow: none; }
+@media (max-width: 800px) { .prints { width: min(86%, 320px); } .phero2 { padding-bottom: 40px; } }
+.spec-card, .spec-card.k-rood, .spec-card.k-rose, .spec-card.k-wit { background: var(--stage); color: var(--ink); }
+.spec-card h2, .spec-card .prodlink { color: var(--accent); }
+.spec-card .specs th { color: var(--muted); } .spec-card .specs td { border-color: var(--line); }
 </style>
 </head>
 <body>
@@ -710,9 +733,11 @@ function renderProduct(w) {
   const siblings = w.pr.wines.filter(x => x.id !== w.id);
   document.getElementById("heroSlot").innerHTML = `
     <section class="phero2 k-${w.k}">
-      ${landscape(w.pr, w.k)}
       <div class="phero2-in">
-        <div class="arch">${scribble(w)}${BOTTLES[w.id] ? `<img class="bottle-img" src="${BOTTLES[w.id]}" alt="Fles ${esc(w.prod)} ${esc(w.n)}">` : `<div class="bottle-draw">${bottle(w)}</div>`}</div>
+        <div class="prints">
+          <figure class="print p-label">${labelArt(w.pr)}</figure>
+          <figure class="print p-bottle"><div class="inner">${scribble(w)}${BOTTLES[w.id] ? `<img class="bottle-img" src="${BOTTLES[w.id]}" alt="Fles ${esc(w.prod)} ${esc(w.n)}">` : `<div class="bottle-draw">${bottle(w)}</div>`}</div><figcaption>${esc(w.pr.w.split(" · ")[0].split(",")[0])}</figcaption></figure>
+        </div>
         <div class="pinfo">
           <nav class="crumbs" aria-label="Kruimelpad"><a href="#">Alle wijnen</a><span>›</span><a href="#producenten">Producenten</a><span>›</span><a href="#p-${w.pr.slug}">${esc(w.prod)}</a></nav>
           <a class="p-prod" href="#p-${w.pr.slug}">${esc(w.prod)}</a>
@@ -726,7 +751,6 @@ function renderProduct(w) {
           <div class="added" id="added" aria-live="polite">${q ? `Nu ${q} ${w.unit === 1 ? "stuks" : (q === 1 ? "doos" : "dozen")} in je mandje.` : ""}</div>
         </div>
       </div>
-      <div class="region-tag">${esc(w.pr.w.split(" · ")[0])}</div>
     </section>`;
   document.getElementById("view").innerHTML = `
     <div class="pdp-body">
